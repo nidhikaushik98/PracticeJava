@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+public class q3 {
+
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        int choice;
+        do{
+            System.out.println("choose the options (1-4).......");
+            System.out.println("1. Display a fibonacci series");
+            System.out.println("2. Computing factorial of a number ");
+            System.out.println("3. Given number is even or odd ");
+            System.out.println("4. Given String is palindrome or not");
+            System.out.println("Enter Your choice.......... ");
+            choice=scanner.nextInt();
+            switch (choice){
+                case 1:
+                    int num;
+                    System.out.println("Enter the no. of terms you want in fibonacci series ");
+                    num=scanner.nextInt();
+                    System.out.println(0);
+                    System.out.println(1);
+                    int count=2,a=0,b=1;
+                    while(count<=num){
+                        int c=a+b;
+                        System.out.println(c);
+                        a=b;
+                        b=c;
+                        count++;
+                    }
+                    break;
+                case 2:
+                    System.out.println("enter the number  ");
+                    num=scanner.nextInt();
+                    int fact=1;
+                    while(num!=0){
+                        fact*=num--;
+                    }
+                    System.out.println("Factorial of given number is "+fact);
+                    break;
+                case 3:
+                    System.out.println("Enter the number");
+                    num=scanner.nextInt();
+                    if(num%2==0){
+                        System.out.println(num+ "is even ");
+                    }else
+                        System.out.println(num+" is odd ");
+                    break;
+                case 4:
+                    scanner.nextLine();
+                    System.out.println("Enter the String ");
+                    String s=scanner.nextLine();
+                    String reverse="";
+                    for(int i=s.length()-1;i>=0;i--){
+                        reverse=reverse+s.charAt(i);
+                    }
+                    if(reverse.equals(s)) {
+                        System.out.println(s + " is palindrome ");
+                    }
+                    else
+                        System.out.println(s+" is not palindrome ");
+                    break;
+            }
+        }while(choice>0 && choice<=4);
+    }
+}
